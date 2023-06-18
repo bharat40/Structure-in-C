@@ -1,0 +1,24 @@
+#include <stdio.h>
+struct date
+{
+    int d, m, y; // structure member variable
+};
+
+struct date inputdate(); // function declaration
+
+int main()
+{
+    struct date d1; // structure variable
+    // function call
+    d1 = inputdate(); // the returned value will be stored in the d1 variable
+    printf("%d-%d-%d", d1.d, d1.m, d1.y);
+    return 0;
+}
+
+struct date inputdate()
+{
+    struct date enterdate;
+    printf("Enter date : ");
+    scanf("%d/%d/%d", &enterdate.d, &enterdate.m, &enterdate.y);
+    return enterdate; // returning value that will go, where the function is called
+}
