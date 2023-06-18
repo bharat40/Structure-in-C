@@ -1,0 +1,28 @@
+#include <stdio.h>
+struct date
+{
+    int d, m, y; // created structure member variable
+};
+
+struct date inputdate();    // declaration of function of type TNRS
+void showDate(struct date); // declaration of function of type TSRN
+
+int main()
+{
+    struct date d1;   // created structure variable
+    d1 = inputdate(); // value returned will come here, and will get saved in d1 variable
+    showDate(d1);     // value of d1 is passed in the function showDate(d1);
+    return 0;
+}
+
+void showDate(struct date somedate)
+{
+    printf("%d-%d-%d", somedate.d, somedate.m, somedate.y);
+}
+struct date inputdate()
+{
+    struct date enterdate;
+    printf("Enter date : ");
+    scanf("%d/%d/%d", &enterdate.d, &enterdate.m, &enterdate.y);
+    return enterdate; // return value where function is called
+}
