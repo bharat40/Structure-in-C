@@ -1,0 +1,40 @@
+#include <stdio.h>
+struct date
+{
+    int d, m, y;
+};
+
+struct date inputdate();
+void showDate(struct date);
+
+int main()
+{
+    struct date dob[4];
+    int i;
+    printf("Enter date of birth of four students");
+    for (i = 0; i <= 3; i++)
+    {
+
+        dob[i] = inputdate();
+    }
+
+    for (i = 0; i <= 3; i++)
+    {
+        showDate(dob[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+void showDate(struct date somedate)
+{
+    printf("\n%d-%d-%d", somedate.d, somedate.m, somedate.y);
+}
+struct date inputdate()
+{
+    struct date enterdate;
+    printf("\nEnter date : ");
+    scanf("%d/%d/%d", &enterdate.d, &enterdate.m, &enterdate.y);
+    return enterdate;
+}
